@@ -1,16 +1,16 @@
 ---
 - name: Create Config Manager on a linux server
-  hosts: "{{target}}"
+  hosts: "{{ target }}"
   become: yes
   gather_facts: false
   tasks:
-    - name: Create a login user
-      user:
-        name: "{{ user }}"
-        password: "{{ password }}"
-        groups:
-          - wheel
-        state: present
+      - name: Create a login user
+        user:
+          name: "{{ user }}"
+          password: "{{ password }}"
+          groups:
+            - sudo
+          state: present
 
     - name: Add public key to authorized_keys
       authorized_key:
