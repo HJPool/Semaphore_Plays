@@ -2,5 +2,9 @@
 - hosts: "{{ target }}"
   become: yes
   tasks:
-    - name: Copy and Execute the script 
+    - name: Copy and Execute the Capture Client installer 
       script: /home/hjpool/ansible/scripts/install_CC.sh
+      register: install_cc_result
+    - name: "Result - Capture Client installation"
+      debug:
+      msg: "{{install_cc_result}}"
