@@ -17,7 +17,7 @@
           user: "{{ user }}"
           state: present
           #key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
-		      key: "{{pub_key}}"
+          key: "{{pub_key}}"
 
       - name: Deny root from logging in
         ansible.builtin.lineinfile:
