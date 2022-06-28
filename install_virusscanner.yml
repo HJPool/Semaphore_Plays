@@ -3,4 +3,4 @@
   become: yes
   tasks:
     - name: Copy and Execute the script 
-      script: /home/hjpool/scripts/install_CC.sh
+      script: /home/hjpool/ansible/scripts/install_CC.sh
