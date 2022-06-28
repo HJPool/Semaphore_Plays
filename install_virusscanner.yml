@@ -7,4 +7,4 @@
       register: install_cc_result
     - name: "Result - Capture Client installation"
       debug:
-      msg: "{{install_cc_result}}"
+        msg: "{{install_cc_result}}"
