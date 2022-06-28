@@ -26,13 +26,6 @@
         line: 'PermitRootLogin no'
         state: present
 
-    - name: Allow specific users to log in
-      ansible.builtin.lineinfile:
-        dest: /etc/ssh/sshd_config
-        regexp: '^AllowUsers'
-        line: 'AllowUsers {{ user }}'
-        state: present
-
     - name: Add {{ user }} to sudoers file
       ansible.builtin.lineinfile:
         path: /etc/sudoers
