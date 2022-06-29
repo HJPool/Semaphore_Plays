@@ -3,10 +3,19 @@
   serial: 1
 
   tasks:
+    - name: Inspect swarm
+      docker_swarm:
+        state: inspect
+      register: swarm_info
+
+    - name: "Result - Docker Swarm"
+      debug:
+        msg: "{{ swarm_info }}"
+
     - name: docker info
       command: docker info
       register: docker_info
 
-    - name: "Result - Capture Client installation"
+    - name: "Result - Docker nodes"
       debug:
         msg: "{{ docker_info }}"
