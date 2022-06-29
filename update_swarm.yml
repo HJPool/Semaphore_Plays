@@ -1,0 +1,12 @@
+---
+- hosts: '{{ target }}'
+  serial: 1
+
+  tasks:
+    - name: docker info
+      command: docker info
+      register: docker_info
+
+    - name: "Result - Capture Client installation"
+      debug:
+        msg: "{{ docker_info }}"
